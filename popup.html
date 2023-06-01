@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pop-up hinnangu andmiseks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <style>
+        .rating-form {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pop-up hinnangu andmiseks</h1>
+
+        <!-- Hinnangu andmise vorm -->
+        <form class="rating-form">
+            <div class="mb-3">
+                <label for="companyName" class="form-label">Ettevõtte nimi</label>
+                <input type="text" class="form-control" id="companyName" required>
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Hinne</label>
+                <select class="form-control" id="rating" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="review" class="form-label">Arvustus</label>
+                <textarea class="form-control" id="review" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvesta</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Hinnangu andmise vormi saatmine
+        $('.rating-form').on('submit', function(e) {
+            e.preventDefault();
+
+            var companyName = $('#companyName').val();
+            var rating = $('#rating').val();
+            var review = $('#review').val();
+
+            // Saada andmed serverile või tee muud vajalikud toimingud
+            // ...
+
+            // Sulge pop-up aken
+            window.close();
+        });
+    </script>
+</body>
+</html>

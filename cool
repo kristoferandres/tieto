@@ -119,3 +119,12 @@ sudo ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/
 
 # Restart Nginx
 sudo systemctl restart nginx
+
+
+sudo apt-get install git -y
+sudo rm -rf /var/www/html/
+sudo git clone https://github.com/kristoferandres/tieto.git /var/www/html/
+
+# Set appropriate ownership and permissions
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
